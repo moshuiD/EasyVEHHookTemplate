@@ -7,4 +7,4 @@ First of all,include VEH-Hook.h in your project and write a function which have 
 `typedef void(Handler)(PCONTEXT);`  
 Secondly new a "VEH" object and use VEH's function "SetHook".  
 `bool SetHook(void* orgFunc, Handler* hookHandlerFunc);`  
-The last my template is automaticly set hook.  
+The last my template is automaticly enable hook.  
