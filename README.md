@@ -1,5 +1,6 @@
 # EasyVEHHookTemplate  
 A simplely VEH hook template  
+[![CodeFactor](https://www.codefactor.io/repository/github/moshuid/easyvehhooktemplate/badge)](https://www.codefactor.io/repository/github/moshuid/easyvehhooktemplate)
 # Why I build it?  
 I need a hook to get WeChat's received messages.  
 # How to use it?  
