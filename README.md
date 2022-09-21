@@ -7,6 +7,6 @@ I need a hook to get WeChat's received messages.
 First of all,choose one of the hook's method.If you want use page exception to hook change PAGE_EXCEPTION 0 to 1 and change INT3_BREAKPOINT 1 to 0.  
 Next include VEH-Hook.h in your project and write a function which have you need method.  
 `typedef void(Handler)(PCONTEXT);`  
-Secondly new a "VEH" object and use VEH's function "SetHook".  
+And then new a "VEH" object and use VEH's function "SetHook".  
 `bool SetHook(void* orgFunc, Handler* hookHandlerFunc);`  
 The last my template is automaticly enable hook.  
