@@ -71,7 +71,6 @@ bool VEH::SetHook(void* orgFunc, Handler * hookHandlerFunc)
 	VirtualProtect(orgFunc, 1, PAGE_EXECUTE_READWRITE, &oldProtect);
 	return *(byte*)orgFunc = 0xCC;
 #endif
-
 }
 bool VEH::UnHook()
 {
@@ -79,7 +78,6 @@ bool VEH::UnHook()
 }
 VEH::VEH()
 {
-
 }
 
 VEH::~VEH()
