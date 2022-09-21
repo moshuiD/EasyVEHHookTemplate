@@ -45,7 +45,7 @@ bool VEH::SetHook(void* orgFunc, Handler* hookHandlerFunc)
 	orgFuncAddr = orgFunc;
 	HandlerFunc = hookHandlerFunc;
 	AddVectoredExceptionHandler(1, (PVECTORED_EXCEPTION_HANDLER)ExceptionHandler);
-	return VirtualProtect(orgFunc, 1, PAGE_GUARD, &oldProtect);
+	return VirtualProtect(orgFunc, 1, PAGE_EXECUTE_READ | PAGE_GUARD, &oldProtect);
 }
 bool VEH::UnHook()
 {
@@ -53,6 +53,7 @@ bool VEH::UnHook()
 }
 VEH::VEH()
 {
+
 }
 
 VEH::~VEH()
