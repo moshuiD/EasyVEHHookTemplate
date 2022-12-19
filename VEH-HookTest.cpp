@@ -7,11 +7,12 @@ int main()
 	VEH* v = new VEH();
 	v->SetHook((void*)addr, [](PCONTEXT info)
 		{
-			printf("HOOK成功");
+			puts("HOOK成功");
 		});
 	MessageBoxA(NULL, "1111", "22", MB_OK);
-	v->UnHook();
+	//v->Refresh((void*)addr);
 	MessageBoxA(NULL, "1111", "22", MB_OK);
+	v->UnHook((void*)addr);
 	return 0;
 }
 
