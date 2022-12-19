@@ -31,7 +31,6 @@ public:
 #endif
 	};
 private:
-	
 	static std::vector<Hook>HookList;
 	static void End() { return; };
 	static LONG NTAPI ExceptionHandler(EXCEPTION_POINTERS* ExceptionInfo)
@@ -47,8 +46,7 @@ private:
 			for (Hook x : HookList)
 			{
 				if ((RegValue)x.orgFuncAddr == ExceptionInfo->ContextRecord->XIP)
-				{
-					
+				{			
 #if PAGE_EXCEPTION
 					VirtualProtect(x.orgFuncAddr, 1, PAGE_EXECUTE_READ | PAGE_GUARD, &x.oldProtect);
 #else
@@ -91,7 +89,6 @@ void VEH::UnHook(void* orgFunc)
 		VirtualProtect(it->orgFuncAddr, 1, it->oldProtect, &it->oldProtect);
 		HookList.erase(it);
 	}
-
 }
 VEH::VEH()
 {
